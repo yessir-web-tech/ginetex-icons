@@ -7,16 +7,16 @@
 
 ## Installation
 
-### As an npm Package
+### From GitHub (npm)
 
 ```bash
-npm install @yessir/ginetex-icons
+npm install yessir-web-tech/ginetex-icons
 ```
 
-### With Yarn
+### From GitHub (Yarn)
 
 ```bash
-yarn add @yessir/ginetex-icons
+yarn add yessir-web-tech/ginetex-icons
 ```
 
 ## Getting Started
@@ -55,10 +55,10 @@ You can directly reference the SVG files in standard `<img>` tags:
     <div class="care-instruction">
       <h2>Regular Cotton Shirt</h2>
       <div class="symbols">
-        <img src="node_modules/@yessir/ginetex-icons/assets/washing/wash-40c.svg" alt="Wash at 40°C" />
-        <img src="node_modules/@yessir/ginetex-icons/assets/bleaching/bleach-allowed.svg" alt="Bleaching allowed" />
-        <img src="node_modules/@yessir/ginetex-icons/assets/drying/tumble-dry.svg" alt="Tumble dry" />
-        <img src="node_modules/@yessir/ginetex-icons/assets/ironing/iron-medium.svg" alt="Iron at medium temperature" />
+        <img src="node_modules/ginetex-icons/assets/washing/wash-40c.svg" alt="Wash at 40°C" />
+        <img src="node_modules/ginetex-icons/assets/bleaching/bleach-allowed.svg" alt="Bleaching allowed" />
+        <img src="node_modules/ginetex-icons/assets/drying/tumble-dry.svg" alt="Tumble dry" />
+        <img src="node_modules/ginetex-icons/assets/ironing/iron-medium.svg" alt="Iron at medium temperature" />
       </div>
     </div>
   </body>
@@ -70,8 +70,8 @@ You can directly reference the SVG files in standard `<img>` tags:
 In React or modern bundlers, you can import the SVGs as modules:
 
 ```jsx
-import wash40c from '@yessir/ginetex-icons/assets/washing/wash-40c.svg';
-import bleachAllowed from '@yessir/ginetex-icons/assets/bleaching/bleach-allowed.svg';
+import wash40c from 'ginetex-icons/assets/washing/wash-40c.svg';
+import bleachAllowed from 'ginetex-icons/assets/bleaching/bleach-allowed.svg';
 import React from 'react';
 
 export function CareLabel() {

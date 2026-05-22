@@ -10,7 +10,7 @@ This package provides direct access to all Ginetex care symbols as SVG files. Us
 
 ```html
 <!-- Use the SVG file -->
-<img src="node_modules/@yessir/ginetex-icons/assets/washing/wash-40c.svg" alt="Wash at 40°C" />
+<img src="node_modules/ginetex-icons/assets/washing/wash-40c.svg" alt="Wash at 40°C" />
 ```
 
 ## Symbol Categories & File Names
@@ -118,7 +118,7 @@ Always include proper `alt` attributes for screen readers:
 
 ```html
 <img
-  src="node_modules/@yessir/ginetex-icons/assets/washing/wash-40c.svg"
+  src="node_modules/ginetex-icons/assets/washing/wash-40c.svg"
   alt="Wash at 40 degrees Celsius"
   title="Wash at 40°C"
 />
@@ -146,10 +146,10 @@ Always include proper `alt` attributes for screen readers:
   <body>
     <h1>T-Shirt Care Instructions</h1>
     <div class="care-label">
-      <img src="node_modules/@yessir/ginetex-icons/assets/washing/wash-40c.svg" alt="Wash at 40°C" />
-      <img src="node_modules/@yessir/ginetex-icons/assets/bleaching/bleach-allowed.svg" alt="Bleaching allowed" />
-      <img src="node_modules/@yessir/ginetex-icons/assets/drying/tumble-dry.svg" alt="Tumble dry" />
-      <img src="node_modules/@yessir/ginetex-icons/assets/ironing/iron-medium.svg" alt="Iron at medium heat" />
+      <img src="node_modules/ginetex-icons/assets/washing/wash-40c.svg" alt="Wash at 40°C" />
+      <img src="node_modules/ginetex-icons/assets/bleaching/bleach-allowed.svg" alt="Bleaching allowed" />
+      <img src="node_modules/ginetex-icons/assets/drying/tumble-dry.svg" alt="Tumble dry" />
+      <img src="node_modules/ginetex-icons/assets/ironing/iron-medium.svg" alt="Iron at medium heat" />
     </div>
   </body>
 </html>

@@ -1,7 +1,7 @@
 # YESSIR - Ginetex Care Symbols Icons Package
 
 [![GitHub license](https://img.shields.io/github/license/yessir-web-tech/ginetex-icons)](LICENSE)
-[![npm version](https://img.shields.io/npm/v/@yessir/ginetex-icons.svg)](https://www.npmjs.com/package/@yessir/ginetex-icons)
+[![npm version](https://img.shields.io/npm/v/ginetex-icons.svg)](https://www.npmjs.com/package/ginetex-icons)
 
 **YESSIR** is an open-source initiative to provide **Ginetex care symbols** in a modern, scalable **SVG format**. 
 
@@ -20,16 +20,16 @@ The official Ginetex website provides these symbols as a font, which is problema
 
 ## 📦 Installation
 
-### As npm package
+### From GitHub (npm)
 
 ```bash
-npm install @yessir/ginetex-icons
+npm install yessir-web-tech/ginetex-icons
 ```
 
-### Via Yarn
+### From GitHub (Yarn)
 
 ```bash
-yarn add @yessir/ginetex-icons
+yarn add yessir-web-tech/ginetex-icons
 ```
 
 ## 🚀 Quick Start
@@ -56,10 +56,10 @@ Simply use the SVGs as standard `<img>` tags or inline SVGs:
   <body>
     <h1>Garment Care Instructions</h1>
     <div class="care-label">
-      <img src="node_modules/@yessir/ginetex-icons/assets/washing/wash-40c.svg" alt="Wash at 40°C" />
-      <img src="node_modules/@yessir/ginetex-icons/assets/bleaching/no-bleach.svg" alt="Do not bleach" />
-      <img src="node_modules/@yessir/ginetex-icons/assets/drying/tumble-dry.svg" alt="Tumble dry" />
-      <img src="node_modules/@yessir/ginetex-icons/assets/ironing/iron-low.svg" alt="Iron at low temperature" />
+      <img src="node_modules/ginetex-icons/assets/washing/wash-40c.svg" alt="Wash at 40°C" />
+      <img src="node_modules/ginetex-icons/assets/bleaching/no-bleach.svg" alt="Do not bleach" />
+      <img src="node_modules/ginetex-icons/assets/drying/tumble-dry.svg" alt="Tumble dry" />
+      <img src="node_modules/ginetex-icons/assets/ironing/iron-low.svg" alt="Iron at low temperature" />
     </div>
   </body>
 </html>
@@ -70,9 +70,9 @@ Simply use the SVGs as standard `<img>` tags or inline SVGs:
 You can import the SVGs as React components (e.g. using SVGR) or use them as regular image sources:
 
 ```jsx
-import wash40c from '@yessir/ginetex-icons/assets/washing/wash-40c.svg';
-import noBleach from '@yessir/ginetex-icons/assets/bleaching/no-bleach.svg';
-import tumbleDry from '@yessir/ginetex-icons/assets/drying/tumble-dry.svg';
+import wash40c from 'ginetex-icons/assets/washing/wash-40c.svg';
+import noBleach from 'ginetex-icons/assets/bleaching/no-bleach.svg';
+import tumbleDry from 'ginetex-icons/assets/drying/tumble-dry.svg';
 
 export function CareLabel() {
   return (
