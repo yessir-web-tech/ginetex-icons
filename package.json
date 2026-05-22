@@ -1,0 +1,46 @@
+{
+  "name": "svgo",
+  "version": "1.0.0",
+  "description": "SVG Optimizer - A Node.js library for optimizing SVG files",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint src test",
+    "lint:fix": "eslint src test --fix",
+    "format": "prettier --write \"src/**/*.js\" \"test/**/*.js\"",
+    "build": "node scripts/build.js",
+    "prepublishOnly": "npm run test && npm run lint"
+  },
+  "keywords": [
+    "svg",
+    "optimizer",
+    "minify",
+    "compress",
+    "cli",
+    "icons"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/svgo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/svgo/issues"
+  },
+  "homepage": "https://github.com/yourusername/svgo#readme",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.0",
+    "@babel/preset-env": "^7.20.0",
+    "eslint": "^8.30.0",
+    "jest": "^29.3.0",
+    "prettier": "^2.8.0"
+  },
+  "dependencies": {}
+}
