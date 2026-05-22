@@ -12,6 +12,9 @@
     "lint:fix": "eslint src test --fix",
     "format": "prettier --write \"src/**/*.js\" \"test/**/*.js\"",
     "build": "node scripts/build.js",
+    "build:iconify": "node scripts/build-iconify.js",
+    "build:iconify:pretty": "node scripts/build-iconify.js --pretty",
+    "validate:iconify": "node scripts/build-iconify.js --validate",
     "prepublishOnly": "npm run test && npm run lint"
   },
   "keywords": [

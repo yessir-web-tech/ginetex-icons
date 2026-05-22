@@ -20,9 +20,10 @@ yarn.lock
 Thumbs.db
 
 # Build
-dist/
 build/
 *.tsbuildinfo
+# dist/ is intentionally tracked — contains the Iconify JSON collection
+# dist/
 
 # Test
 coverage/
