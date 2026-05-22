@@ -2,52 +2,28 @@
 
 ## Requirements
 
-- Node.js >= 14.0.0
+- Node.js >= 14.0.0 (if using npm/yarn)
 - npm or yarn
 
 ## Installation
 
-### As a Library
+### As an npm Package
 
 ```bash
-npm install svgo
+npm install @yessir/ginetex-icons
 ```
-
-### Global CLI Installation
-
-```bash
-npm install -g svgo
-```
-
-### From Source
-
-```bash
-git clone https://github.com/yourusername/svgo.git
-cd svgo
-npm install
-npm run build
-```
-
-## Getting Started
-
-### Using the JavaScript API
-
-````javascript
-const SVGO = require('svgo');
-
-### As a Font Package (Recommended)
-
-```bash
-npm install @yessir/ginetex-care-symbols
-````
 
 ### With Yarn
 
 ```bash
-yarn add @yessir/ginetex-care-symbols
+yarn add @yessir/ginetex-icons
 ```
 
+## Getting Started
+
 ### Using in HTML
+
+You can directly reference the SVG files in standard `<img>` tags:
 
 ```html
 <!DOCTYPE html>
@@ -55,10 +31,6 @@ yarn add @yessir/ginetex-care-symbols
   <head>
     <meta charset="UTF-8" />
     <title>Care Symbols Demo</title>
-    <link
-      rel="stylesheet"
-      href="node_modules/@yessir/ginetex-care-symbols/dist/ginetex-icons.css"
-    />
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -70,7 +42,10 @@ yarn add @yessir/ginetex-care-symbols
       .symbols {
         display: flex;
         gap: 20px;
-        font-size: 48px;
+      }
+      .symbols img {
+        width: 48px;
+        height: 48px;
       }
     </style>
   </head>
@@ -80,68 +55,36 @@ yarn add @yessir/ginetex-care-symbols
     <div class="care-instruction">
       <h2>Regular Cotton Shirt</h2>
       <div class="symbols">
-        <span class="gx-icon gx-wash-40c" title="Wash at 40°C"></span>
-        <span class="gx-icon gx-bleach-allowed" title="Bleaching allowed"></span>
-        <span class="gx-icon gx-tumble-dry" title="Tumble dry"></span>
-        <span class="gx-icon gx-iron-medium" title="Iron at medium temperature"></span>
-      </div>
-    </div>
-
-    <div class="care-instruction">
-      <h2>Delicate Fabric</h2>
-      <div class="symbols">
-        <span class="gx-icon gx-hand-wash-40c" title="Hand wash at 40°C"></span>
-        <span class="gx-icon gx-no-bleach" title="Do not bleach"></span>
-        <span class="gx-icon gx-line-dry" title="Line dry"></span>
-        <span class="gx-icon gx-no-iron" title="Do not iron"></span>
+        <img src="node_modules/@yessir/ginetex-icons/assets/washing/wash-40c.svg" alt="Wash at 40°C" />
+        <img src="node_modules/@yessir/ginetex-icons/assets/bleaching/bleach-allowed.svg" alt="Bleaching allowed" />
+        <img src="node_modules/@yessir/ginetex-icons/assets/drying/tumble-dry.svg" alt="Tumble dry" />
+        <img src="node_modules/@yessir/ginetex-icons/assets/ironing/iron-medium.svg" alt="Iron at medium temperature" />
       </div>
     </div>
   </body>
 </html>
 ```
 
-### Using with CSS
-
-```css
-/* Import font in your stylesheet */
-@import '@yessir/ginetex-care-symbols/dist/ginetex-icons.css';
-
-/* Use in your CSS */
-.care-symbol {
-  font-family: 'Ginetex Icons';
-  display: inline-block;
-  font-size: 24px;
-  line-height: 1;
-}
-```
-
 ### Using with React
 
+In React or modern bundlers, you can import the SVGs as modules:
+
 ```jsx
-import '@yessir/ginetex-care-symbols/dist/ginetex-icons.css';
+import wash40c from '@yessir/ginetex-icons/assets/washing/wash-40c.svg';
+import bleachAllowed from '@yessir/ginetex-icons/assets/bleaching/bleach-allowed.svg';
 import React from 'react';
 
-export function CareLabel({ instructions }) {
+export function CareLabel() {
   return (
-    <div className="care-label">
-      {instructions.map((icon, idx) => (
-        <span key={idx} className={`gx-icon gx-${icon.code}`} title={icon.description} />
-      ))}
+    <div className="care-label" style={{ display: 'flex', gap: '10px' }}>
+      <img src={wash40c} alt="Wash 40C" width={32} height={32} />
+      <img src={bleachAllowed} alt="Bleach allowed" width={32} height={32} />
     </div>
   );
 }
 ```
 
-## Font Files Included
-
-The package includes multiple font formats:
-
-- **ginetex-icons.woff2** - Modern browsers
-- **ginetex-icons.woff** - Older browsers
-- **ginetex-icons.ttf** - Desktop applications
-
 ## Next Steps
 
-- See [API Documentation](./API.md) for complete symbol reference
 - Check [Contributing Guide](../CONTRIBUTING.md) to contribute
 - Visit [Ginetex](https://www.ginetex.net/) for official symbol definitions

@@ -1,7 +1,7 @@
 {
-  "name": "@yessir/ginetex-care-symbols",
+  "name": "@yessir/ginetex-icons",
   "version": "1.0.0",
-  "description": "Ginetex care symbols font package - Official textile care instruction symbols in modern web font formats",
+  "description": "Ginetex care symbols SVG package - Official textile care instruction symbols in modern SVG format",
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
@@ -18,27 +18,24 @@
     "ginetex",
     "care-symbols",
     "textile",
-    "font",
+    "svg",
     "icons",
     "washing",
     "bleaching",
     "drying",
     "ironing",
-    "professional-care",
-    "svg",
-    "woff",
-    "ttf"
+    "professional-care"
   ],
   "author": "YESSIR Organization",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yessir-org/ginetex-care-symbols.git"
+    "url": "https://github.com/yessir-web-tech/ginetex-icons.git"
   },
   "bugs": {
-    "url": "https://github.com/yessir-org/ginetex-care-symbols/issues"
+    "url": "https://github.com/yessir-web-tech/ginetex-icons/issues"
   },
-  "homepage": "https://github.com/yessir-org/ginetex-care-symbols#readme",
+  "homepage": "https://github.com/yessir-web-tech/ginetex-icons#readme",
   "engines": {
     "node": ">=14.0.0"
   },

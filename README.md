@@ -1,22 +1,21 @@
-# YESSIR - Ginetex Care Symbols Font Package
+# YESSIR - Ginetex Care Symbols Icons Package
 
-[![GitHub license](https://img.shields.io/github/license/yessir-org/ginetex-care-symbols)](LICENSE)
-[![npm version](https://img.shields.io/npm/v/@yessir/ginetex-care-symbols.svg)](https://www.npmjs.com/package/@yessir/ginetex-care-symbols)
-[![Node.js CI](https://github.com/yessir-org/ginetex-care-symbols/workflows/Node.js%20CI/badge.svg)](https://github.com/yessir-org/ginetex-care-symbols/actions)
+[![GitHub license](https://img.shields.io/github/license/yessir-web-tech/ginetex-icons)](LICENSE)
+[![npm version](https://img.shields.io/npm/v/@yessir/ginetex-icons.svg)](https://www.npmjs.com/package/@yessir/ginetex-icons)
 
-**YESSIR** is an open-source initiative to provide **Ginetex care symbols** in modern font format. The Ginetex care symbols are standardized international textile care instructions that define washing, bleaching, drying, ironing, and professional care requirements.
+**YESSIR** is an open-source initiative to provide **Ginetex care symbols** in a modern, scalable **SVG format**. 
 
-This package converts the official Ginetex symbols from SVG into web-ready font formats, making them easily accessible to developers and designers without worrying about finding or maintaining individual SVG assets.
+The official Ginetex website provides these symbols as a font, which is problematic for modern web development, accessibility, and precise styling. This project was created specifically to solve this problem by offering all official Ginetex symbols as clean, individual, and optimized SVG files instead of a restrictive font format.
 
 **Reference:** [Ginetex Care Symbols - Official Labelling Standards](https://www.ginetex.net/gb/labelling/care-symbols.asp)
 
 ## 🎨 Features
 
 - ✨ **Complete Care Symbol Set** - All 50+ official Ginetex care symbols
+- 📐 **SVG Format** - Crisp, scalable, and independent SVG icons instead of a web font
 - 📚 **Organized by Category** - Washing, Bleaching, Drying, Ironing, Professional Care
-- ⚡ **Web Font Ready** - TTF, WOFF, WOFF2 formats
-- 🔤 **Easy Integration** - Use in HTML, CSS, React, Vue, and any web framework
-- 📦 **Lightweight** - Minimal file sizes optimized for web
+- 🔤 **Easy Integration** - Use in HTML, React, Vue, and any web framework easily as inline SVGs or image tags
+- 📦 **Lightweight** - Optimized SVGs for fast loading
 - 🧪 **Open Source** - MIT licensed, community-driven development
 
 ## 📦 Installation
@@ -24,42 +23,43 @@ This package converts the official Ginetex symbols from SVG into web-ready font 
 ### As npm package
 
 ```bash
-npm install @yessir/ginetex-care-symbols
+npm install @yessir/ginetex-icons
 ```
 
 ### Via Yarn
 
 ```bash
-yarn add @yessir/ginetex-care-symbols
+yarn add @yessir/ginetex-icons
 ```
 
 ## 🚀 Quick Start
 
 ### HTML Usage
 
+Simply use the SVGs as standard `<img>` tags or inline SVGs:
+
 ```html
 <!DOCTYPE html>
 <html>
   <head>
-    <link
-      rel="stylesheet"
-      href="node_modules/@yessir/ginetex-care-symbols/dist/ginetex-icons.css"
-    />
     <style>
       .care-label {
         display: flex;
         gap: 15px;
-        font-size: 48px;
+      }
+      .care-label img {
+        width: 48px;
+        height: 48px;
       }
     </style>
   </head>
   <body>
     <h1>Garment Care Instructions</h1>
     <div class="care-label">
-      <span class="gx-icon gx-wash-40c" title="Wash at 40°C"></span>
-      <span class="gx-icon gx-no-bleach" title="Do not bleach"></span>
-      <span class="gx-icon gx-tumble-dry" title="Tumble dry"></span>
-      <span class="gx-icon gx-iron-low" title="Iron at low temperature"></span>
+      <img src="node_modules/@yessir/ginetex-icons/assets/washing/wash-40c.svg" alt="Wash at 40°C" />
+      <img src="node_modules/@yessir/ginetex-icons/assets/bleaching/no-bleach.svg" alt="Do not bleach" />
+      <img src="node_modules/@yessir/ginetex-icons/assets/drying/tumble-dry.svg" alt="Tumble dry" />
+      <img src="node_modules/@yessir/ginetex-icons/assets/ironing/iron-low.svg" alt="Iron at low temperature" />
     </div>
   </body>
 </html>
@@ -67,42 +67,21 @@ yarn add @yessir/ginetex-care-symbols
 
 ### React Component
 
-```jsx
-import '@yessir/ginetex-care-symbols/dist/ginetex-icons.css';
+You can import the SVGs as React components (e.g. using SVGR) or use them as regular image sources:
 
-export function CareLabel({ instructions }) {
+```jsx
+import wash40c from '@yessir/ginetex-icons/assets/washing/wash-40c.svg';
+import noBleach from '@yessir/ginetex-icons/assets/bleaching/no-bleach.svg';
+import tumbleDry from '@yessir/ginetex-icons/assets/drying/tumble-dry.svg';
+
+export function CareLabel() {
   return (
-    <div className="care-label">
-      {instructions.map(icon => (
-        <span key={icon.code} className={`gx-icon gx-${icon.code}`} title={icon.description} />
-      ))}
+    <div className="care-label" style={{ display: 'flex', gap: '15px' }}>
+      <img src={wash40c} alt="Wash at 40°C" width={48} height={48} />
+      <img src={noBleach} alt="Do not bleach" width={48} height={48} />
+      <img src={tumbleDry} alt="Tumble dry" width={48} height={48} />
     </div>
   );
-}
-
-// Usage
-<CareLabel
-  instructions={[
-    { code: 'wash-40c', description: 'Wash at 40°C' },
-    { code: 'no-bleach', description: 'Do not bleach' },
-    { code: 'tumble-dry', description: 'Tumble dry' }
-  ]}
-/>;
-```
-
-### CSS Only
-
-```css
-/* Add to your stylesheet */
-@font-face {
-  font-family: 'Ginetex Icons';
-  src: url('../fonts/ginetex-icons.woff2') format('woff2');
-}
-
-.care-icon {
-  font-family: 'Ginetex Icons';
-  font-size: 24px;
-  display: inline-block;
 }
 ```
 
@@ -114,29 +93,11 @@ export function CareLabel({ instructions }) {
 - Hand wash instructions
 - Gentle wash cycles
 
-```
-gx-wash-30c
-gx-wash-40c
-gx-wash-60c
-gx-wash-70c
-gx-wash-95c
-gx-hand-wash
-gx-hand-wash-40c
-gx-no-wash
-```
-
 ### 🧹 Bleaching (4 symbols)
 
 - Bleach allowed
 - Oxygen bleach only
 - No bleach
-
-```
-gx-bleach-allowed
-gx-oxygen-bleach-only
-gx-no-bleach
-gx-bleaching
-```
 
 ### 🌬️ Drying (20 symbols)
 
@@ -145,29 +106,11 @@ gx-bleaching
 - Flat drying
 - Professional drying
 
-```
-gx-tumble-dry
-gx-tumble-dry-low
-gx-tumble-dry-medium
-gx-line-dry
-gx-flat-dry
-gx-dry-in-shade
-```
-
 ### 🔥 Ironing (6 symbols)
 
 - Temperature levels: Low, Medium, High
 - Steam options
 - No ironing
-
-```
-gx-iron-low
-gx-iron-medium
-gx-iron-high
-gx-iron-no-steam
-gx-no-iron
-gx-hot-iron
-```
 
 ### 🏢 Professional Care (6 symbols)
 
@@ -175,93 +118,14 @@ gx-hot-iron
 - Wet cleaning
 - Special care instructions
 
-```
-gx-dry-clean
-gx-dry-clean-hydrocarbons
-gx-professional-wet-clean
-gx-no-dry-clean
-gx-professional-care
-gx-mild-professional-wet-clean
-```
-
 ## 📚 Documentation
 
 - **[Installation Guide](docs/INSTALLATION.md)** - Detailed setup instructions
-- **[API Reference](docs/API.md)** - Complete symbol reference
 - **[Contributing Guide](CONTRIBUTING.md)** - How to contribute
-- **[Changelog](docs/CHANGELOG.md)** - Version history
-
-## 🛠️ Development
-
-### Setup
-
-```bash
-git clone https://github.com/yessir-org/ginetex-care-symbols.git
-cd ginetex-care-symbols
-npm install
-```
-
-### Available Scripts
-
-```bash
-# Run tests
-npm test
-
-# Watch mode during development
-npm run test:watch
-
-# Generate test coverage report
-npm run test:coverage
-
-# Lint code
-npm run lint
-
-# Fix linting issues
-npm run lint:fix
-
-# Format code with Prettier
-npm run format
-
-# Build font files
-npm run build
-```
-
-### Project Structure
-
-```
-.
-├── assets/                      # SVG source files
-│   ├── washing/                # Washing symbols (14)
-│   ├── bleaching/              # Bleaching symbols (4)
-│   ├── drying/                 # Drying symbols (20)
-│   ├── ironing/                # Ironing symbols (6)
-│   └── professional-care/      # Professional care symbols (6)
-├── src/
-│   ├── index.js               # Main entry point
-│   ├── optimizer.js           # SVG optimization
-│   └── cli.js                 # Command-line interface
-├── dist/                      # Generated font files
-│   ├── ginetex-icons.woff2
-│   ├── ginetex-icons.woff
-│   ├── ginetex-icons.ttf
-│   ├── ginetex-icons.css
-│   └── ginetex-icons.json     # Symbol reference
-├── test/                      # Test files
-├── docs/                      # Documentation
-└── package.json
-```
 
 ## 🤝 Contributing
 
 We welcome contributions! Please read our [Contributing Guide](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
-
-### Development Workflow
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
 
 ## 📄 License
 
@@ -277,12 +141,12 @@ This project is licensed under the MIT License - see [LICENSE](LICENSE) file for
 
 ## 📧 Support
 
-- 🐛 [Report Issues](https://github.com/yessir-org/ginetex-care-symbols/issues)
-- 💬 [Start Discussion](https://github.com/yessir-org/ginetex-care-symbols/discussions)
+- 🐛 [Report Issues](https://github.com/yessir-web-tech/ginetex-icons/issues)
+- 💬 [Start Discussion](https://github.com/yessir-web-tech/ginetex-icons/discussions)
 - 📖 [Read Documentation](docs/)
 
 ---
 
 **Made with ❤️ by YESSIR Organization**
 
-_Bringing international textile care standards to the web_
+_Bringing international textile care standards to the web as SVGs_

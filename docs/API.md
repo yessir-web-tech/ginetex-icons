@@ -1,144 +1,127 @@
-# API Documentation
-
-## SVGO Class
-
-### Constructor
+# Icon Reference Guide
 
 ## Ginetex Care Symbols - Complete Reference
 
 ### Overview
 
-This package provides CSS-based access to all Ginetex care symbols. Use the icon classes directly in your HTML with the `gx-` prefix.
+This package provides direct access to all Ginetex care symbols as SVG files. Use the SVG files in your HTML using `<img>` tags or inline them as needed.
 
 ### Basic Usage
 
 ```html
-<!-- Link the CSS -->
-<link rel="stylesheet" href="@yessir/ginetex-care-symbols/dist/ginetex-icons.css" />
-
-<!-- Use the icon -->
-<span class="gx-icon gx-wash-40c"></span>
+<!-- Use the SVG file -->
+<img src="node_modules/@yessir/ginetex-icons/assets/washing/wash-40c.svg" alt="Wash at 40°C" />
 ```
 
-## Symbol Categories & Classes
+## Symbol Categories & File Names
+
+The SVG files are organized into directories by category.
 
 ### 1. Washing Symbols (14 total)
 
-Temperature-based washing instructions and hand wash options.
+Location: `assets/washing/`
 
-| Class               | Description           | Temperature |
-| ------------------- | --------------------- | ----------- |
-| `gx-wash-30c`       | Permanent press cycle | 30°C        |
-| `gx-wash-40c`       | Gentle cycle          | 40°C        |
-| `gx-wash-60c`       | Normal cycle          | 60°C        |
-| `gx-wash-70c`       | Hot cycle             | 70°C        |
-| `gx-wash-95c`       | Very hot cycle / Boil | 95°C        |
-| `gx-hand-wash`      | Hand wash only        | Any         |
-| `gx-hand-wash-40c`  | Hand wash             | 40°C        |
-| `gx-no-wash`        | Do not wash           | -           |
-| `gx-mild-wash`      | Mild wash cycle       | Any         |
-| `gx-very-mild-wash` | Very mild wash cycle  | Any         |
+| File Name             | Description           | Temperature |
+| --------------------- | --------------------- | ----------- |
+| `wash-30c.svg`        | Permanent press cycle | 30°C        |
+| `wash-40c.svg`        | Gentle cycle          | 40°C        |
+| `wash-60c.svg`        | Normal cycle          | 60°C        |
+| `wash-70c.svg`        | Hot cycle             | 70°C        |
+| `wash-95c.svg`        | Very hot cycle / Boil | 95°C        |
+| `hand-wash.svg`       | Hand wash only        | Any         |
+| `hand-wash-40c.svg`   | Hand wash             | 40°C        |
+| `no-wash.svg`         | Do not wash           | -           |
+| `mild-wash.svg`       | Mild wash cycle       | Any         |
+| `very-mild-wash.svg`  | Very mild wash cycle  | Any         |
 
 ### 2. Bleaching Symbols (4 total)
 
-Bleach usage instructions.
+Location: `assets/bleaching/`
 
-| Class                   | Description                      |
-| ----------------------- | -------------------------------- |
-| `gx-bleach-allowed`     | Any bleach allowed               |
-| `gx-oxygen-bleach-only` | Oxygen/chlorine-free bleach only |
-| `gx-no-bleach`          | Do not bleach                    |
-| `gx-bleaching`          | Bleaching process symbol         |
+| File Name                 | Description                      |
+| ------------------------- | -------------------------------- |
+| `bleach-allowed.svg`      | Any bleach allowed               |
+| `oxygen-bleach-only.svg`  | Oxygen/chlorine-free bleach only |
+| `no-bleach.svg`           | Do not bleach                    |
+| `bleaching.svg`           | Bleaching process symbol         |
 
 ### 3. Drying Symbols (20 total)
 
-Various drying methods and temperatures.
+Location: `assets/drying/`
 
-| Class                  | Description              |
-| ---------------------- | ------------------------ |
-| `gx-tumble-dry`        | Tumble dry (any heat)    |
-| `gx-tumble-dry-low`    | Tumble dry - low heat    |
-| `gx-tumble-dry-medium` | Tumble dry - medium heat |
-| `gx-line-dry`          | Line dry                 |
-| `gx-flat-dry`          | Flat dry                 |
-| `gx-dry-in-shade`      | Dry in shade             |
-| `gx-drip-dry`          | Drip dry                 |
-| `gx-natural-dry`       | Natural drying           |
-| `gx-normal-drying`     | Normal drying process    |
-| `gx-mild-drying`       | Mild drying process      |
-| `gx-no-dry-clean`      | Do not dry clean         |
+| File Name                | Description              |
+| ------------------------ | ------------------------ |
+| `tumble-dry.svg`         | Tumble dry (any heat)    |
+| `tumble-dry-low.svg`     | Tumble dry - low heat    |
+| `tumble-dry-medium.svg`  | Tumble dry - medium heat |
+| `line-dry.svg`           | Line dry                 |
+| `flat-dry.svg`           | Flat dry                 |
+| `dry-in-shade.svg`       | Dry in shade             |
+| `drip-dry.svg`           | Drip dry                 |
+| `natural-dry.svg`        | Natural drying           |
+| `normal-drying.svg`      | Normal drying process    |
+| `mild-drying.svg`        | Mild drying process      |
+| `no-dry-clean.svg`       | Do not dry clean         |
 
 ### 4. Ironing Symbols (6 total)
 
-Temperature-based ironing instructions.
+Location: `assets/ironing/`
 
-| Class              | Description                | Temperature |
-| ------------------ | -------------------------- | ----------- |
-| `gx-iron-low`      | Iron at low temperature    | Low         |
-| `gx-iron-medium`   | Iron at medium temperature | Medium      |
-| `gx-iron-high`     | Iron at high temperature   | High        |
-| `gx-iron-no-steam` | Iron without steam         | Low         |
-| `gx-no-iron`       | Do not iron                | -           |
-| `gx-hot-iron`      | Hot iron symbol            | High        |
+| File Name            | Description                | Temperature |
+| -------------------- | -------------------------- | ----------- |
+| `iron-low.svg`       | Iron at low temperature    | Low         |
+| `iron-medium.svg`    | Iron at medium temperature | Medium      |
+| `iron-high.svg`      | Iron at high temperature   | High        |
+| `iron-no-steam.svg`  | Iron without steam         | Low         |
+| `no-iron.svg`        | Do not iron                | -           |
+| `hot-iron.svg`       | Hot iron symbol            | High        |
 
 ### 5. Professional Care Symbols (6 total)
 
-Dry cleaning and professional care instructions.
+Location: `assets/professional-care/`
 
-| Class                            | Description                       |
-| -------------------------------- | --------------------------------- |
-| `gx-dry-clean`                   | Dry clean allowed                 |
-| `gx-dry-clean-hydrocarbons`      | Dry clean with hydrocarbons       |
-| `gx-professional-wet-clean`      | Professional wet cleaning allowed |
-| `gx-mild-professional-wet-clean` | Mild professional wet cleaning    |
-| `gx-professional-care`           | Professional care required        |
-| `gx-no-dry-clean`                | Do not dry clean                  |
+| File Name                          | Description                       |
+| ---------------------------------- | --------------------------------- |
+| `dry-clean.svg`                    | Dry clean allowed                 |
+| `dry-clean-hydrocarbons.svg`       | Dry clean with hydrocarbons       |
+| `professional-wet-clean.svg`       | Professional wet cleaning allowed |
+| `mild-professional-wet-clean.svg`  | Mild professional wet cleaning    |
+| `professional-care.svg`            | Professional care required        |
+| `no-dry-clean.svg`                 | Do not dry clean                  |
 
 ## CSS Integration Examples
 
 ### Sizing
 
-```css
-.gx-icon {
-  font-size: 24px; /* Default size */
-}
-
-.care-label .gx-icon {
-  font-size: 48px; /* Larger for labels */
-}
-
-.badge .gx-icon {
-  font-size: 16px; /* Smaller for badges */
-}
-```
-
-### Coloring
+When using `<img>` tags, size them using CSS `width` and `height`:
 
 ```css
-.gx-icon {
-  color: #333; /* Dark gray */
+.care-icon {
+  width: 24px;
+  height: 24px;
 }
 
-.gx-icon.warning {
-  color: #e74c3c; /* Red for restrictions */
+.care-label .care-icon {
+  width: 48px;
+  height: 48px;
 }
 
-.gx-icon.info {
-  color: #3498db; /* Blue for instructions */
+.badge .care-icon {
+  width: 16px;
+  height: 16px;
 }
 ```
 
 ## Accessibility Guidelines
 
-Always include proper ARIA labels for screen readers:
+Always include proper `alt` attributes for screen readers:
 
 ```html
-<span
-  class="gx-icon gx-wash-40c"
-  role="img"
-  aria-label="Wash at 40 degrees Celsius"
+<img
+  src="node_modules/@yessir/ginetex-icons/assets/washing/wash-40c.svg"
+  alt="Wash at 40 degrees Celsius"
   title="Wash at 40°C"
-></span>
+/>
 ```
 
 ## Complete HTML Example
@@ -147,24 +130,26 @@ Always include proper ARIA labels for screen readers:
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="@yessir/ginetex-care-symbols/dist/ginetex-icons.css" />
     <style>
       .care-label {
         display: flex;
         gap: 20px;
-        font-size: 48px;
         padding: 20px;
         background: #f5f5f5;
+      }
+      .care-label img {
+        width: 48px;
+        height: 48px;
       }
     </style>
   </head>
   <body>
     <h1>T-Shirt Care Instructions</h1>
     <div class="care-label">
-      <span class="gx-icon gx-wash-40c" aria-label="Wash at 40°C"></span>
-      <span class="gx-icon gx-bleach-allowed" aria-label="Bleaching allowed"></span>
-      <span class="gx-icon gx-tumble-dry" aria-label="Tumble dry"></span>
-      <span class="gx-icon gx-iron-medium" aria-label="Iron at medium heat"></span>
+      <img src="node_modules/@yessir/ginetex-icons/assets/washing/wash-40c.svg" alt="Wash at 40°C" />
+      <img src="node_modules/@yessir/ginetex-icons/assets/bleaching/bleach-allowed.svg" alt="Bleaching allowed" />
+      <img src="node_modules/@yessir/ginetex-icons/assets/drying/tumble-dry.svg" alt="Tumble dry" />
+      <img src="node_modules/@yessir/ginetex-icons/assets/ironing/iron-medium.svg" alt="Iron at medium heat" />
     </div>
   </body>
 </html>
@@ -172,19 +157,4 @@ Always include proper ARIA labels for screen readers:
 
 ## Browser Support
 
-- Chrome/Chromium 26+
-- Firefox 22+
-- Safari 5.1+
-- Edge 12+
-- Opera 15+
-- iOS Safari 5.1+
-- Android Browser 4.4+
-
-## Font File Details
-
-The following font files are included:
-
-- `ginetex-icons.woff2` (22KB) - Modern browsers - **Recommended**
-- `ginetex-icons.woff` (28KB) - Older browsers
-- `ginetex-icons.ttf` (64KB) - Desktop applications
-- `ginetex-icons.eot` (48KB) - Internet Explorer 8
+- All modern browsers support SVG images seamlessly.
