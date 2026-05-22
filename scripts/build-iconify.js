@@ -30,7 +30,7 @@ const CONFIG = {
   outputDir: path.resolve(__dirname, '../dist'),
   outputFile: 'ginetex.json',
   defaultWidth: 24,
-  defaultHeight: 24,
+  defaultHeight: 24
 };
 
 /** Maps folder names → Iconify category labels */
@@ -39,7 +39,7 @@ const CATEGORY_LABELS = {
   bleaching: 'Bleaching',
   drying: 'Drying',
   ironing: 'Ironing',
-  'professional-care': 'Professional Care',
+  'professional-care': 'Professional Care'
 };
 
 // ─── SVG Parsing Helpers ──────────────────────────────────────────────────────
@@ -176,8 +176,8 @@ function build() {
   // ── 1. Discover categories ──────────────────────────────────────────────────
   const categoryDirs = fs
     .readdirSync(CONFIG.assetsDir, { withFileTypes: true })
-    .filter((d) => d.isDirectory())
-    .map((d) => d.name)
+    .filter(d => d.isDirectory())
+    .map(d => d.name)
     .sort();
 
   if (categoryDirs.length === 0) {
@@ -198,11 +198,11 @@ function build() {
     const categoryPath = path.join(CONFIG.assetsDir, category);
     const svgFiles = fs
       .readdirSync(categoryPath)
-      .filter((f) => f.endsWith('.svg'))
+      .filter(f => f.endsWith('.svg'))
       .sort();
 
     if (svgFiles.length === 0) {
-      console.warn(`  ⚠  Category "${category}" has no SVG files — skipping.`);
+      console.warn(`  ⚠  Category "${category}" has no SVG files - skipping.`);
       continue;
     }
 
@@ -248,7 +248,7 @@ function build() {
   // ── 3. Report errors ────────────────────────────────────────────────────────
   if (errors.length > 0) {
     console.error(`✖  ${errors.length} error(s) encountered. Aborting.`);
-    errors.forEach((e) => console.error(`   • ${e.file}: ${e.message}`));
+    errors.forEach(e => console.error(`   • ${e.file}: ${e.message}`));
     process.exit(1);
   }
 
@@ -267,17 +267,17 @@ function build() {
       version: require('../package.json').version,
       author: {
         name: 'YESSIR Organization',
-        url: 'https://github.com/yessir-web-tech/ginetex-icons',
+        url: 'https://github.com/yessir-web-tech/ginetex-icons'
       },
       license: {
         title: 'MIT',
         spdx: 'MIT',
-        url: 'https://github.com/yessir-web-tech/ginetex-icons/blob/main/LICENSE',
+        url: 'https://github.com/yessir-web-tech/ginetex-icons/blob/main/LICENSE'
       },
       samples: Object.keys(icons).slice(0, 3),
       height: CONFIG.defaultHeight,
       category: 'General',
-      tags: ['textile', 'care', 'laundry', 'washing', 'symbols', 'ginetex'],
+      tags: ['textile', 'care', 'laundry', 'washing', 'symbols', 'ginetex']
     },
 
     // Default dimensions for the entire collection
@@ -287,13 +287,13 @@ function build() {
     icons,
 
     // Category groupings (used by Iconify UI for browsing)
-    categories,
+    categories
   };
 
   // ── 5. Validate-only mode ───────────────────────────────────────────────────
   if (validateOnly) {
-    console.log(`✔  Validation passed — ${totalIcons} icons are valid.`);
-    console.log('   (No output written — remove --validate to generate the file.)');
+    console.log(`✔  Validation passed - ${totalIcons} icons are valid.`);
+    console.log('   (No output written - remove --validate to generate the file.)');
     return;
   }
 
@@ -303,9 +303,7 @@ function build() {
   }
 
   const outputPath = path.join(CONFIG.outputDir, CONFIG.outputFile);
-  const json = pretty
-    ? JSON.stringify(collection, null, 2)
-    : JSON.stringify(collection);
+  const json = pretty ? JSON.stringify(collection, null, 2) : JSON.stringify(collection);
 
   fs.writeFileSync(outputPath, json, 'utf-8');
 
