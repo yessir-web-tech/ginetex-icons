@@ -1,7 +1,7 @@
 {
-  "name": "svgo",
+  "name": "@yessir/ginetex-care-symbols",
   "version": "1.0.0",
-  "description": "SVG Optimizer - A Node.js library for optimizing SVG files",
+  "description": "Ginetex care symbols font package - Official textile care instruction symbols in modern web font formats",
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
@@ -15,23 +15,30 @@
     "prepublishOnly": "npm run test && npm run lint"
   },
   "keywords": [
+    "ginetex",
+    "care-symbols",
+    "textile",
+    "font",
+    "icons",
+    "washing",
+    "bleaching",
+    "drying",
+    "ironing",
+    "professional-care",
     "svg",
-    "optimizer",
-    "minify",
-    "compress",
-    "cli",
-    "icons"
+    "woff",
+    "ttf"
   ],
-  "author": "Your Name",
+  "author": "YESSIR Organization",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/svgo.git"
+    "url": "https://github.com/yessir-org/ginetex-care-symbols.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/svgo/issues"
+    "url": "https://github.com/yessir-org/ginetex-care-symbols/issues"
   },
-  "homepage": "https://github.com/yourusername/svgo#readme",
+  "homepage": "https://github.com/yessir-org/ginetex-care-symbols#readme",
   "engines": {
     "node": ">=14.0.0"
   },

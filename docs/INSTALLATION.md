@@ -32,72 +32,116 @@ npm run build
 
 ### Using the JavaScript API
 
-```javascript
+````javascript
 const SVGO = require('svgo');
 
-const svgo = new SVGO({
-  plugins: [{ name: 'removeDoctype' }, { name: 'removeComments' }, { name: 'removeMetadata' }]
-});
-
-const svgContent = `<svg xmlns="http://www.w3.org/2000/svg">
-  <!-- Comment -->
-  <metadata>...</metadata>
-  <circle cx="50" cy="50" r="40"/>
-</svg>`;
-
-svgo.optimize(svgContent).then(result => {
-  console.log(result.data);
-});
-```
-
-### Using the CLI
+### As a Font Package (Recommended)
 
 ```bash
-# Optimize a single file
-svgo input.svg -o output.svg
+npm install @yessir/ginetex-care-symbols
+````
 
-# Optimize all SVG files in a folder
-svgo *.svg --folder=dist/
+### With Yarn
+
+```bash
+yarn add @yessir/ginetex-care-symbols
 ```
 
-## Configuration
+### Using in HTML
 
-Create a `.svgorc.json` file in your project root:
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Care Symbols Demo</title>
+    <link
+      rel="stylesheet"
+      href="node_modules/@yessir/ginetex-care-symbols/dist/ginetex-icons.css"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      .care-instruction {
+        margin: 20px 0;
+      }
+      .symbols {
+        display: flex;
+        gap: 20px;
+        font-size: 48px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Garment Care Instructions</h1>
 
-```json
-{
-  "plugins": [
-    {
-      "name": "preset-default"
-    },
-    {
-      "name": "removeViewBox",
-      "active": false
-    }
-  ]
+    <div class="care-instruction">
+      <h2>Regular Cotton Shirt</h2>
+      <div class="symbols">
+        <span class="gx-icon gx-wash-40c" title="Wash at 40°C"></span>
+        <span class="gx-icon gx-bleach-allowed" title="Bleaching allowed"></span>
+        <span class="gx-icon gx-tumble-dry" title="Tumble dry"></span>
+        <span class="gx-icon gx-iron-medium" title="Iron at medium temperature"></span>
+      </div>
+    </div>
+
+    <div class="care-instruction">
+      <h2>Delicate Fabric</h2>
+      <div class="symbols">
+        <span class="gx-icon gx-hand-wash-40c" title="Hand wash at 40°C"></span>
+        <span class="gx-icon gx-no-bleach" title="Do not bleach"></span>
+        <span class="gx-icon gx-line-dry" title="Line dry"></span>
+        <span class="gx-icon gx-no-iron" title="Do not iron"></span>
+      </div>
+    </div>
+  </body>
+</html>
+```
+
+### Using with CSS
+
+```css
+/* Import font in your stylesheet */
+@import '@yessir/ginetex-care-symbols/dist/ginetex-icons.css';
+
+/* Use in your CSS */
+.care-symbol {
+  font-family: 'Ginetex Icons';
+  display: inline-block;
+  font-size: 24px;
+  line-height: 1;
 }
 ```
 
-Or use `svgo.config.js`:
+### Using with React
 
-```javascript
-module.exports = {
-  plugins: [
-    {
-      name: 'preset-default',
-      params: {
-        overrides: {
-          convertPathData: false,
-          convertTransform: true
-        }
-      }
-    }
-  ]
-};
+```jsx
+import '@yessir/ginetex-care-symbols/dist/ginetex-icons.css';
+import React from 'react';
+
+export function CareLabel({ instructions }) {
+  return (
+    <div className="care-label">
+      {instructions.map((icon, idx) => (
+        <span key={idx} className={`gx-icon gx-${icon.code}`} title={icon.description} />
+      ))}
+    </div>
+  );
+}
 ```
+
+## Font Files Included
+
+The package includes multiple font formats:
+
+- **ginetex-icons.woff2** - Modern browsers
+- **ginetex-icons.woff** - Older browsers
+- **ginetex-icons.ttf** - Desktop applications
 
 ## Next Steps
 
-- See [Plugin Documentation](./plugins.md) for available plugins
-- Check [API Documentation](./api.md) for detailed API reference
-- Read [Contributing Guide](../CONTRIBUTING.md) to contribute
+- See [API Documentation](./API.md) for complete symbol reference
+- Check [Contributing Guide](../CONTRIBUTING.md) to contribute
+- Visit [Ginetex](https://www.ginetex.net/) for official symbol definitions

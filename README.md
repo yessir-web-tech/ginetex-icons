@@ -1,157 +1,259 @@
-# SVGO - SVG Optimizer
+# YESSIR - Ginetex Care Symbols Font Package
 
-[![GitHub license](https://img.shields.io/github/license/yourusername/svgo)](LICENSE)
-[![npm version](https://img.shields.io/npm/v/svgo.svg)](https://www.npmjs.com/package/svgo)
-[![Node.js CI](https://github.com/yourusername/svgo/workflows/Node.js%20CI/badge.svg)](https://github.com/yourusername/svgo/actions)
+[![GitHub license](https://img.shields.io/github/license/yessir-org/ginetex-care-symbols)](LICENSE)
+[![npm version](https://img.shields.io/npm/v/@yessir/ginetex-care-symbols.svg)](https://www.npmjs.com/package/@yessir/ginetex-care-symbols)
+[![Node.js CI](https://github.com/yessir-org/ginetex-care-symbols/workflows/Node.js%20CI/badge.svg)](https://github.com/yessir-org/ginetex-care-symbols/actions)
 
-A powerful Node.js library for optimizing and minifying SVG files. SVGO removes unnecessary elements and optimizes SVG markup while preserving visual quality.
+**YESSIR** is an open-source initiative to provide **Ginetex care symbols** in modern font format. The Ginetex care symbols are standardized international textile care instructions that define washing, bleaching, drying, ironing, and professional care requirements.
 
-## Features
+This package converts the official Ginetex symbols from SVG into web-ready font formats, making them easily accessible to developers and designers without worrying about finding or maintaining individual SVG assets.
 
-✨ **Clean & Optimize** - Remove unnecessary metadata and optimize SVG structure  
-⚡ **Fast** - High-performance processing for batch operations  
-🎯 **Configurable** - Fine-tune optimization with numerous options  
-📦 **CLI & Library** - Use as command-line tool or Node.js library  
-🧪 **Well-tested** - Comprehensive test coverage  
-📄 **TypeScript Ready** - Full TypeScript support  
+**Reference:** [Ginetex Care Symbols - Official Labelling Standards](https://www.ginetex.net/gb/labelling/care-symbols.asp)
 
-## Installation
+## 🎨 Features
+
+- ✨ **Complete Care Symbol Set** - All 50+ official Ginetex care symbols
+- 📚 **Organized by Category** - Washing, Bleaching, Drying, Ironing, Professional Care
+- ⚡ **Web Font Ready** - TTF, WOFF, WOFF2 formats
+- 🔤 **Easy Integration** - Use in HTML, CSS, React, Vue, and any web framework
+- 📦 **Lightweight** - Minimal file sizes optimized for web
+- 🧪 **Open Source** - MIT licensed, community-driven development
+
+## 📦 Installation
 
 ### As npm package
 
 ```bash
-npm install svgo
+npm install @yessir/ginetex-care-symbols
 ```
 
-### Global CLI
+### Via Yarn
 
 ```bash
-npm install -g svgo
+yarn add @yessir/ginetex-care-symbols
 ```
 
-## Quick Start
+## 🚀 Quick Start
 
-### Using as Library
+### HTML Usage
 
-```javascript
-const SVGO = require('svgo');
-
-const svgo = new SVGO({
-  plugins: [
-    { name: 'removeDoctype' },
-    { name: 'removeComments' },
-    { name: 'removeMetadata' }
-  ]
-});
-
-const svg = '<svg>...</svg>';
-svgo.optimize(svg).then(result => {
-  console.log(result.data);
-});
-```
-
-### Using CLI
-
-```bash
-svgo input.svg -o output.svg
-svgo *.svg --folder=dist/
-```
-
-## Configuration
-
-Create a `.svgorc.json` or `svgo.config.js` file in your project root:
-
-```json
-{
-  "plugins": [
-    {
-      "name": "preset-default",
-      "params": {
-        "overrides": {
-          "convertPathData": false
-        }
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="node_modules/@yessir/ginetex-care-symbols/dist/ginetex-icons.css"
+    />
+    <style>
+      .care-label {
+        display: flex;
+        gap: 15px;
+        font-size: 48px;
       }
-    }
-  ]
+    </style>
+  </head>
+  <body>
+    <h1>Garment Care Instructions</h1>
+    <div class="care-label">
+      <span class="gx-icon gx-wash-40c" title="Wash at 40°C"></span>
+      <span class="gx-icon gx-no-bleach" title="Do not bleach"></span>
+      <span class="gx-icon gx-tumble-dry" title="Tumble dry"></span>
+      <span class="gx-icon gx-iron-low" title="Iron at low temperature"></span>
+    </div>
+  </body>
+</html>
+```
+
+### React Component
+
+```jsx
+import '@yessir/ginetex-care-symbols/dist/ginetex-icons.css';
+
+export function CareLabel({ instructions }) {
+  return (
+    <div className="care-label">
+      {instructions.map(icon => (
+        <span key={icon.code} className={`gx-icon gx-${icon.code}`} title={icon.description} />
+      ))}
+    </div>
+  );
+}
+
+// Usage
+<CareLabel
+  instructions={[
+    { code: 'wash-40c', description: 'Wash at 40°C' },
+    { code: 'no-bleach', description: 'Do not bleach' },
+    { code: 'tumble-dry', description: 'Tumble dry' }
+  ]}
+/>;
+```
+
+### CSS Only
+
+```css
+/* Add to your stylesheet */
+@font-face {
+  font-family: 'Ginetex Icons';
+  src: url('../fonts/ginetex-icons.woff2') format('woff2');
+}
+
+.care-icon {
+  font-family: 'Ginetex Icons';
+  font-size: 24px;
+  display: inline-block;
 }
 ```
 
-## Available Plugins
+## 📋 Care Symbols Categories
 
-- `removeDoctype` - Remove DOCTYPE declaration
-- `removeComments` - Remove XML comments
-- `removeMetadata` - Remove metadata element
-- `removeXMLProcInst` - Remove XML processing instructions
-- `removeTitle` - Remove title element
-- `removeDesc` - Remove description element
-- `removeEmptyAttrs` - Remove empty attributes
-- `removeEmptyContainers` - Remove empty containers
-- `convertPathData` - Optimize path data
-- `convertTransform` - Simplify transforms
-- `removeUnknownsAndDefaults` - Remove unknown elements
-- `removeUselessStrokeAndFill` - Remove default stroke/fill
-- `removeViewBox` - Remove viewBox attribute
+### 🧼 Washing (14 symbols)
 
-## Development
+- Temperature options: 30°C, 40°C, 60°C, 70°C, 95°C
+- Hand wash instructions
+- Gentle wash cycles
+
+```
+gx-wash-30c
+gx-wash-40c
+gx-wash-60c
+gx-wash-70c
+gx-wash-95c
+gx-hand-wash
+gx-hand-wash-40c
+gx-no-wash
+```
+
+### 🧹 Bleaching (4 symbols)
+
+- Bleach allowed
+- Oxygen bleach only
+- No bleach
+
+```
+gx-bleach-allowed
+gx-oxygen-bleach-only
+gx-no-bleach
+gx-bleaching
+```
+
+### 🌬️ Drying (20 symbols)
+
+- Tumble drying options
+- Line drying
+- Flat drying
+- Professional drying
+
+```
+gx-tumble-dry
+gx-tumble-dry-low
+gx-tumble-dry-medium
+gx-line-dry
+gx-flat-dry
+gx-dry-in-shade
+```
+
+### 🔥 Ironing (6 symbols)
+
+- Temperature levels: Low, Medium, High
+- Steam options
+- No ironing
+
+```
+gx-iron-low
+gx-iron-medium
+gx-iron-high
+gx-iron-no-steam
+gx-no-iron
+gx-hot-iron
+```
+
+### 🏢 Professional Care (6 symbols)
+
+- Dry cleaning
+- Wet cleaning
+- Special care instructions
+
+```
+gx-dry-clean
+gx-dry-clean-hydrocarbons
+gx-professional-wet-clean
+gx-no-dry-clean
+gx-professional-care
+gx-mild-professional-wet-clean
+```
+
+## 📚 Documentation
+
+- **[Installation Guide](docs/INSTALLATION.md)** - Detailed setup instructions
+- **[API Reference](docs/API.md)** - Complete symbol reference
+- **[Contributing Guide](CONTRIBUTING.md)** - How to contribute
+- **[Changelog](docs/CHANGELOG.md)** - Version history
+
+## 🛠️ Development
 
 ### Setup
 
 ```bash
-git clone https://github.com/yourusername/svgo.git
-cd svgo
+git clone https://github.com/yessir-org/ginetex-care-symbols.git
+cd ginetex-care-symbols
 npm install
 ```
 
-### Running Tests
+### Available Scripts
 
 ```bash
 # Run tests
 npm test
 
-# Watch mode
+# Watch mode during development
 npm run test:watch
 
-# Coverage report
+# Generate test coverage report
 npm run test:coverage
-```
 
-### Linting & Formatting
-
-```bash
 # Lint code
 npm run lint
 
 # Fix linting issues
 npm run lint:fix
 
-# Format with Prettier
+# Format code with Prettier
 npm run format
+
+# Build font files
+npm run build
 ```
 
-## Project Structure
+### Project Structure
 
 ```
-svgo/
+.
+├── assets/                      # SVG source files
+│   ├── washing/                # Washing symbols (14)
+│   ├── bleaching/              # Bleaching symbols (4)
+│   ├── drying/                 # Drying symbols (20)
+│   ├── ironing/                # Ironing symbols (6)
+│   └── professional-care/      # Professional care symbols (6)
 ├── src/
-│   ├── index.js           # Main entry point
-│   ├── optimizer.js       # Core optimizer logic
-│   ├── plugins/           # Plugin modules
-│   └── cli.js             # CLI interface
-├── test/
-│   ├── unit/              # Unit tests
-│   ├── integration/       # Integration tests
-│   └── fixtures/          # Test SVG files
-├── docs/                  # Documentation
-├── assets/                # SVG assets (logos, examples)
-├── .github/workflows/     # GitHub Actions CI/CD
-├── package.json
-├── README.md
-└── LICENSE
+│   ├── index.js               # Main entry point
+│   ├── optimizer.js           # SVG optimization
+│   └── cli.js                 # Command-line interface
+├── dist/                      # Generated font files
+│   ├── ginetex-icons.woff2
+│   ├── ginetex-icons.woff
+│   ├── ginetex-icons.ttf
+│   ├── ginetex-icons.css
+│   └── ginetex-icons.json     # Symbol reference
+├── test/                      # Test files
+├── docs/                      # Documentation
+└── package.json
 ```
 
-## Contributing
+## 🤝 Contributing
 
-We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+We welcome contributions! Please read our [Contributing Guide](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
 
 ### Development Workflow
 
@@ -161,26 +263,26 @@ We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guid
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## License
+## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see [LICENSE](LICENSE) file for details.
 
-## Changelog
+**Important:** Ginetex is a trademark of Ginetex. This project is an independent, open-source implementation of the Ginetex care symbol standards for accessibility and developer convenience.
 
-See [CHANGELOG.md](docs/CHANGELOG.md) for version history.
+## 🙏 Acknowledgments
 
-## Support
+- 🎯 [Ginetex](https://www.ginetex.net/) - For the official care symbol standards
+- 👥 All contributors and community members
+- 📖 Open-source community for inspiration and tools
 
-- 📖 [Documentation](docs/)
-- 🐛 [Report Issues](https://github.com/yourusername/svgo/issues)
-- 💬 [Discussions](https://github.com/yourusername/svgo/discussions)
+## 📧 Support
 
-## Acknowledgments
-
-- Thanks to all contributors
-- Inspired by the original SVGO project
-- Special thanks to the SVG community
+- 🐛 [Report Issues](https://github.com/yessir-org/ginetex-care-symbols/issues)
+- 💬 [Start Discussion](https://github.com/yessir-org/ginetex-care-symbols/discussions)
+- 📖 [Read Documentation](docs/)
 
 ---
 
-Made with ❤️ by Your Name
+**Made with ❤️ by YESSIR Organization**
+
+_Bringing international textile care standards to the web_

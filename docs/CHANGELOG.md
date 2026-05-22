@@ -1,38 +1,36 @@
-# SVGO Changelog
+# YESSIR - Ginetex Care Symbols Font Package Changelog
 
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.0.0] - 2024-01-01
+## [1.0.0] - 2026-05-22
 
 ### Added
 
-- Initial release of SVGO
-- Core SVG optimization engine
-- Support for multiple optimization plugins
-- CLI interface for batch processing
-- Configuration file support (.svgorc.json)
-- Comprehensive test suite
-- Full documentation
+- Initial release of YESSIR Ginetex Care Symbols Font Package
+- Complete set of 50+ official Ginetex care symbols
+- Symbols organized into 5 categories (Washing, Bleaching, Drying, Ironing, Professional Care)
+- Web font formats: WOFF2, WOFF, TTF, EOT
+- CSS class-based icon system with gx- prefix
+- Comprehensive documentation and examples
+- React and Vue.js integration examples
+- Accessibility support (ARIA labels, screen readers)
 - GitHub Actions CI/CD pipeline
-- Code quality tools (ESLint, Prettier)
+- Full test coverage with Jest
 
 ### Features
 
-- Remove unnecessary SVG elements and attributes
-- Optimize SVG structure and paths
-- Configurable optimization plugins
-- Fast batch processing
-- TypeScript support
+- Modern web font delivery system
+- Easy framework integration (HTML, CSS, React, Vue, etc.)
+- Professional textile care standards compliance
+- Lightweight and optimized font files
+- Cross-browser support
+- Community-driven development model
+- MIT open-source license
 
-## [Unreleased]
+## Reference
 
-### Planned
-
-- Advanced path optimization algorithms
-- SVGZ (compressed SVG) support
-- Web UI for interactive optimization
-- Performance improvements
-- Additional plugin options
+Official Ginetex: https://www.ginetex.net/gb/labelling/care-symbols.asp
+Project: YESSIR | License: MIT

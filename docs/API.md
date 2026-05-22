@@ -4,134 +4,187 @@
 
 ### Constructor
 
-```javascript
-new SVGO(config);
+## Ginetex Care Symbols - Complete Reference
+
+### Overview
+
+This package provides CSS-based access to all Ginetex care symbols. Use the icon classes directly in your HTML with the `gx-` prefix.
+
+### Basic Usage
+
+```html
+<!-- Link the CSS -->
+<link rel="stylesheet" href="@yessir/ginetex-care-symbols/dist/ginetex-icons.css" />
+
+<!-- Use the icon -->
+<span class="gx-icon gx-wash-40c"></span>
 ```
 
-#### Parameters
+## Symbol Categories & Classes
 
-- `config` (Object): Configuration object
-  - `plugins` (Array): Array of plugins to apply
-  - Additional options can be passed here
+### 1. Washing Symbols (14 total)
 
-#### Example
+Temperature-based washing instructions and hand wash options.
 
-```javascript
-const SVGO = require('svgo');
+| Class               | Description           | Temperature |
+| ------------------- | --------------------- | ----------- |
+| `gx-wash-30c`       | Permanent press cycle | 30°C        |
+| `gx-wash-40c`       | Gentle cycle          | 40°C        |
+| `gx-wash-60c`       | Normal cycle          | 60°C        |
+| `gx-wash-70c`       | Hot cycle             | 70°C        |
+| `gx-wash-95c`       | Very hot cycle / Boil | 95°C        |
+| `gx-hand-wash`      | Hand wash only        | Any         |
+| `gx-hand-wash-40c`  | Hand wash             | 40°C        |
+| `gx-no-wash`        | Do not wash           | -           |
+| `gx-mild-wash`      | Mild wash cycle       | Any         |
+| `gx-very-mild-wash` | Very mild wash cycle  | Any         |
 
-const svgo = new SVGO({
-  plugins: [{ name: 'removeDoctype' }, { name: 'removeComments' }]
-});
-```
+### 2. Bleaching Symbols (4 total)
 
-## Methods
+Bleach usage instructions.
 
-### optimize(svgContent)
+| Class                   | Description                      |
+| ----------------------- | -------------------------------- |
+| `gx-bleach-allowed`     | Any bleach allowed               |
+| `gx-oxygen-bleach-only` | Oxygen/chlorine-free bleach only |
+| `gx-no-bleach`          | Do not bleach                    |
+| `gx-bleaching`          | Bleaching process symbol         |
 
-Optimizes SVG content.
+### 3. Drying Symbols (20 total)
 
-#### Parameters
+Various drying methods and temperatures.
 
-- `svgContent` (string): SVG content to optimize
+| Class                  | Description              |
+| ---------------------- | ------------------------ |
+| `gx-tumble-dry`        | Tumble dry (any heat)    |
+| `gx-tumble-dry-low`    | Tumble dry - low heat    |
+| `gx-tumble-dry-medium` | Tumble dry - medium heat |
+| `gx-line-dry`          | Line dry                 |
+| `gx-flat-dry`          | Flat dry                 |
+| `gx-dry-in-shade`      | Dry in shade             |
+| `gx-drip-dry`          | Drip dry                 |
+| `gx-natural-dry`       | Natural drying           |
+| `gx-normal-drying`     | Normal drying process    |
+| `gx-mild-drying`       | Mild drying process      |
+| `gx-no-dry-clean`      | Do not dry clean         |
 
-#### Returns
+### 4. Ironing Symbols (6 total)
 
-- Promise that resolves to an object with:
-  - `data` (string): Optimized SVG content
-  - `error` (null|string): Error message if optimization failed
+Temperature-based ironing instructions.
 
-#### Example
+| Class              | Description                | Temperature |
+| ------------------ | -------------------------- | ----------- |
+| `gx-iron-low`      | Iron at low temperature    | Low         |
+| `gx-iron-medium`   | Iron at medium temperature | Medium      |
+| `gx-iron-high`     | Iron at high temperature   | High        |
+| `gx-iron-no-steam` | Iron without steam         | Low         |
+| `gx-no-iron`       | Do not iron                | -           |
+| `gx-hot-iron`      | Hot iron symbol            | High        |
 
-```javascript
-svgo.optimize('<svg>...</svg>').then(result => {
-  if (result.error) {
-    console.error('Optimization error:', result.error);
-  } else {
-    console.log('Optimized SVG:', result.data);
-  }
-});
-```
+### 5. Professional Care Symbols (6 total)
 
-## Plugin Configuration
+Dry cleaning and professional care instructions.
 
-### Plugin Object Structure
+| Class                            | Description                       |
+| -------------------------------- | --------------------------------- |
+| `gx-dry-clean`                   | Dry clean allowed                 |
+| `gx-dry-clean-hydrocarbons`      | Dry clean with hydrocarbons       |
+| `gx-professional-wet-clean`      | Professional wet cleaning allowed |
+| `gx-mild-professional-wet-clean` | Mild professional wet cleaning    |
+| `gx-professional-care`           | Professional care required        |
+| `gx-no-dry-clean`                | Do not dry clean                  |
 
-```javascript
-{
-  name: 'pluginName',        // Required: plugin identifier
-  active: true,              // Optional: enable/disable plugin
-  params: {                  // Optional: plugin-specific parameters
-    option1: value1,
-    option2: value2
-  }
+## CSS Integration Examples
+
+### Sizing
+
+```css
+.gx-icon {
+  font-size: 24px; /* Default size */
+}
+
+.care-label .gx-icon {
+  font-size: 48px; /* Larger for labels */
+}
+
+.badge .gx-icon {
+  font-size: 16px; /* Smaller for badges */
 }
 ```
 
-### Built-in Plugins
+### Coloring
 
-- `removeDoctype` - Remove DOCTYPE declaration
-- `removeComments` - Remove XML/HTML comments
-- `removeMetadata` - Remove metadata elements
-- `removeXMLProcInst` - Remove XML processing instructions
-- `removeEmptyAttrs` - Remove empty attributes
-- `removeEmptyContainers` - Remove empty g/svg elements
+```css
+.gx-icon {
+  color: #333; /* Dark gray */
+}
 
-## Error Handling
+.gx-icon.warning {
+  color: #e74c3c; /* Red for restrictions */
+}
 
-```javascript
-svgo
-  .optimize(content)
-  .then(result => {
-    if (result.error) {
-      console.error('Error:', result.error);
-      // Handle error
-    } else {
-      console.log('Success:', result.data);
-      // Use optimized SVG
-    }
-  })
-  .catch(err => {
-    console.error('Unexpected error:', err);
-  });
+.gx-icon.info {
+  color: #3498db; /* Blue for instructions */
+}
 ```
 
-## Advanced Usage
+## Accessibility Guidelines
 
-### Custom Plugin Implementation
+Always include proper ARIA labels for screen readers:
 
-```javascript
-const svgo = new SVGO({
-  plugins: [
-    {
-      name: 'custom-plugin',
-      params: {
-        custom: 'value'
+```html
+<span
+  class="gx-icon gx-wash-40c"
+  role="img"
+  aria-label="Wash at 40 degrees Celsius"
+  title="Wash at 40°C"
+></span>
+```
+
+## Complete HTML Example
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="@yessir/ginetex-care-symbols/dist/ginetex-icons.css" />
+    <style>
+      .care-label {
+        display: flex;
+        gap: 20px;
+        font-size: 48px;
+        padding: 20px;
+        background: #f5f5f5;
       }
-    }
-  ]
-});
+    </style>
+  </head>
+  <body>
+    <h1>T-Shirt Care Instructions</h1>
+    <div class="care-label">
+      <span class="gx-icon gx-wash-40c" aria-label="Wash at 40°C"></span>
+      <span class="gx-icon gx-bleach-allowed" aria-label="Bleaching allowed"></span>
+      <span class="gx-icon gx-tumble-dry" aria-label="Tumble dry"></span>
+      <span class="gx-icon gx-iron-medium" aria-label="Iron at medium heat"></span>
+    </div>
+  </body>
+</html>
 ```
 
-### Batch Processing
+## Browser Support
 
-```javascript
-const fs = require('fs');
-const path = require('path');
+- Chrome/Chromium 26+
+- Firefox 22+
+- Safari 5.1+
+- Edge 12+
+- Opera 15+
+- iOS Safari 5.1+
+- Android Browser 4.4+
 
-async function optimizeBatch(folderPath) {
-  const files = fs.readdirSync(folderPath).filter(f => f.endsWith('.svg'));
+## Font File Details
 
-  for (const file of files) {
-    const filePath = path.join(folderPath, file);
-    const content = fs.readFileSync(filePath, 'utf-8');
-    const result = await svgo.optimize(content);
+The following font files are included:
 
-    if (!result.error) {
-      fs.writeFileSync(filePath, result.data);
-      console.log(`Optimized: ${file}`);
-    }
-  }
-}
-
-optimizeBatch('./svg-folder');
-```
+- `ginetex-icons.woff2` (22KB) - Modern browsers - **Recommended**
+- `ginetex-icons.woff` (28KB) - Older browsers
+- `ginetex-icons.ttf` (64KB) - Desktop applications
+- `ginetex-icons.eot` (48KB) - Internet Explorer 8
