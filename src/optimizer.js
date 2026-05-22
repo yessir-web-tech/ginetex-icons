@@ -48,23 +48,22 @@ class SVGOptimizer {
    */
   applyPlugin(plugin, content) {
     const pluginName = typeof plugin === 'string' ? plugin : plugin.name;
-    const params = typeof plugin === 'object' ? plugin.params || {} : {};
 
     switch (pluginName) {
-      case 'removeDoctype':
-        return this.removeDoctype(content);
-      case 'removeComments':
-        return this.removeComments(content);
-      case 'removeMetadata':
-        return this.removeMetadata(content);
-      case 'removeEmptyAttrs':
-        return this.removeEmptyAttrs(content);
-      case 'removeEmptyContainers':
-        return this.removeEmptyContainers(content);
-      case 'removeXMLProcInst':
-        return this.removeXMLProcInst(content);
-      default:
-        return content;
+    case 'removeDoctype':
+      return this.removeDoctype(content);
+    case 'removeComments':
+      return this.removeComments(content);
+    case 'removeMetadata':
+      return this.removeMetadata(content);
+    case 'removeEmptyAttrs':
+      return this.removeEmptyAttrs(content);
+    case 'removeEmptyContainers':
+      return this.removeEmptyContainers(content);
+    case 'removeXMLProcInst':
+      return this.removeXMLProcInst(content);
+    default:
+      return content;
     }
   }
 

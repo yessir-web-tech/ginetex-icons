@@ -5,7 +5,6 @@
  */
 
 const fs = require('fs');
-const path = require('path');
 const SVGO = require('./index');
 
 /**
@@ -65,6 +64,7 @@ async function main() {
 
     const output = options.output || options.input.replace(/\.svg$/, '.min.svg');
     fs.writeFileSync(output, result.data);
+    // eslint-disable-next-line no-console
     console.log(`✓ Optimized: ${options.input} → ${output}`);
   } catch (error) {
     console.error('Error:', error.message);
